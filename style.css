@@ -65,14 +65,16 @@ body {
   width: 40px;
   border-radius: 50%;
   object-fit: cover;
+  padding: 2px;
+  background-color: white;
 }
 
-.tag h1 {
+.tag a {
   font-size: 28px;
   font-weight: 700;
 }
 
-.tag h1 span {
+.tag a span {
   color: rgb(0, 255, 26);
 }
 
