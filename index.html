@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Connect</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Locomotive CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
+    <section id="page1" data-scroll>
+        <div id="overlay"></div>
+
+        <video muted autoplay loop playsinline>
+            <source src="./8199334-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
+
+        <div id="content">
+
+            <!-- NAVBAR -->
+            <nav class="nav">
+                <div class="tag">
+                    <img src="./9b7b3c292da4344d1191ce9bf44ef3e3.jpg" alt="Campus Connect Logo" />
+                    <h1>Campus<span>Connect</span></h1>
+                </div>
+
+                <div class="nav-element">
+                    <a href="#">About</a>
+                    <a href="#">Explore</a>
+                    <a href="#">Campaigns</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Community</a>
+                    <!-- <a class="login-btn" href="#">Login / Sign Up</a> -->
+                </div>
+            </nav>
+
+            <!-- HERO SECTION -->
+            <div class="hero">
+                <p class="hero-tagline">Help & Grow,</p>
+
+                <h2 class="hero-heading">
+                    Campus Life, Powered by Students
+                </h2>
+
+                <p class="hero-desc">
+                    Bridging the gap between students who need help and peers who can provide it. Join Campus
+                    Connect, <br>
+                    Campus Connect makes collaboration, resource sharing, and problem-solving simple.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/login-signup.html" class="hero-primary">Get Started</a>
+                    <a href="#" class="hero-secondary">Explore Campus</a>
+                </div>
+
+                <div class="hero-scroll">
+                    <div>
+                        <p class="hero-scroll-text">Scroll Down</p>
+                    </div>
+                    <div class="mouse">
+                        <div class="hero-mouse-body">
+                            <div class="hero-mouse-wheel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <audio id="bgAudio" loop>
+        <source src="./Ambience%20Cascade.MP3" type="audio/mp3">
+    </audio>
+
+    <button id="audioBtn"
+        class="fixed bottom-8 right-8 z-[100] px-4 py-2 rounded-full bg-green-400 text-black backdrop-blur-md hover:bg-black hover:text-white transition cursor-pointer">
+        🎵 Play Music
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
