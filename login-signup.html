@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="./cropped_circle_image (3).png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Signup – CampusConnect</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./assests/logo/cropped_circle_image (3).png">
 </head>
-<body>
-    
+
+<body class="min-h-screen bg-black flex items-center justify-center text-white">
+
+  <!-- AUTH CARD -->
+  <div class="w-full max-w-md rounded-3xl bg-white/5 backdrop-blur-xl
+              border border-white/10 p-8 shadow-[0_0_40px_rgba(0,255,26,0.15)]">
+
+    <!-- TOGGLE -->
+    <div class="flex bg-black/60 rounded-full p-1 mb-8">
+      <button id="loginTab"
+        class="flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black">
+        Login
+      </button>
+      <button id="signupTab"
+        class="flex-1 py-2 rounded-full font-semibold transition text-gray-300">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="space-y-5">
+      <h2 class="text-2xl font-bold text-center mb-4">Welcome Back</h2>
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <button
+        type="submit"
+        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold
+               hover:scale-[1.03] transition">
+        Login
+      </button>
+
+      <p class="text-center text-sm text-gray-400">
+        Forgot password? <span class="text-[#00ff1a]">Coming soon</span>
+      </p>
+    </form>
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" class="space-y-5 hidden">
+      <h2 class="text-2xl font-bold text-center mb-4">Create Account</h2>
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20
+               focus:border-[#00ff1a] outline-none transition" />
+
+      <button
+        type="submit"
+        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold
+               hover:scale-[1.03] transition">
+        Sign Up
+      </button>
+
+      <p class="text-center text-sm text-gray-400">
+        By signing up, you agree to our policies.
+      </p>
+    </form>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    loginTab.onclick = () => {
+      loginTab.classList.add("bg-[#00ff1a]", "text-black");
+      signupTab.classList.remove("bg-[#00ff1a]", "text-black");
+      signupTab.classList.add("text-gray-300");
+      loginForm.classList.remove("hidden");
+      signupForm.classList.add("hidden");
+    };
+
+    signupTab.onclick = () => {
+      signupTab.classList.add("bg-[#00ff1a]", "text-black");
+      loginTab.classList.remove("bg-[#00ff1a]", "text-black");
+      loginTab.classList.add("text-gray-300");
+      signupForm.classList.remove("hidden");
+      loginForm.classList.add("hidden");
+    };
+
+    // BACKEND READY
+    loginForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(loginForm));
+      console.log("LOGIN →", data);
+      // fetch("/api/login", { method: "POST", body: JSON.stringify(data) })
+    });
+
+    signupForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(signupForm));
+      console.log("SIGNUP →", data);
+      // fetch("/api/signup", { method: "POST", body: JSON.stringify(data) })
+    });
+  </script>
+
 </body>
 </html>
