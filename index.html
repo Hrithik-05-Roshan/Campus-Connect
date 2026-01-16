@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./fbadfb196068c417894dd4c5f9bfa7ba (2).png" type="image/x-icon">
+    <link rel="icon" href="./assests/logo/cropped_circle_image (3).png" type="image/x-icon">
 </head>
 
 <body>
@@ -19,12 +19,12 @@
         <!-- NAVBAR -->
         <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="#main">
             <div class="tag">
-                <img src="./fbadfb196068c417894dd4c5f9bfa7ba (2).png" alt="Campus Connect Logo" />
+                <img src="./assests/logo/fbadfb196068c417894dd4c5f9bfa7ba (2).png" alt="Campus Connect Logo" />
                 <a href="/">Campus<span>Connect</span></a>
             </div>
 
             <div class="nav-element">
-                <a href="#">About</a>
+                <a href="./about.html">About</a>
                 <a href="#">Explore</a>
                 <a href="#">Campaigns</a>
                 <a href="#">FAQ</a>
@@ -36,7 +36,7 @@
             <div id="overlay"></div>
 
             <video muted autoplay loop playsinline>
-                <source src="./8199334-hd_1920_1080_25fps.mp4" type="video/mp4" />
+                <source src="./assests/videos/8199334-hd_1920_1080_25fps.mp4" type="video/mp4" />
             </video>
 
             <div id="content">
@@ -58,8 +58,8 @@
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="/login-signup.html" class="hero-primary">Get Started</a>
-                        <a href="#" class="hero-secondary">Explore Campus</a>
+                        <a href="/login-signup.html" class="hero-primary hover:scale-105 transition">Get Started</a>
+                        <a href="#" class="hero-secondary hover:scale-105 transition">Explore Campus</a>
                     </div>
 
                     <div class="hero-scroll mb-10">
@@ -195,7 +195,8 @@
                     <!-- Brand -->
                     <div>
                         <div class="tag mb-7">
-                            <img src="./fbadfb196068c417894dd4c5f9bfa7ba (1).png" alt="Campus Connect Logo" />
+                            <img src="./assests/logo/fbadfb196068c417894dd4c5f9bfa7ba (2).png"
+                                alt="Campus Connect Logo" />
                             <a href="/">Campus<span>Connect</span></a>
                         </div>
                         <p class="text-gray-400 max-w-sm leading-relaxed">
@@ -207,27 +208,36 @@
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
                         <ul class="space-y-4">
-                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">About Us</a></li>
+                            <li><a href="./about.html" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">About
+                                    Us</a></li>
                             <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Events</a></li>
                             <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Careers</a></li>
                             <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Privacy
-                                    Policy</a>
-                            </li>
+                                    Policy</a></li>
+                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Feedback</a></li>
                         </ul>
                     </div>
 
                     <!-- Social -->
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-6">Connect With Us</h3>
-                        <div class="flex gap-5 text-2xl">
-                            <a href="#" class="hover:text-[#00ff1a] transition"><i
-                                    class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#" class="hover:text-[#00ff1a] transition"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="hover:text-[#00ff1a] transition"><i
-                                    class="fa-brands fa-square-linkedin"></i></a>
-                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-github"></i></a>
+                        <div class="flex flex-col gap-5 text-2xl">
+                            <div class="flex gap-7">
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="flex gap-7">
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-brands fa-square-linkedin"></i></a>
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
 
@@ -237,17 +247,20 @@
                 <div class="border-t border-white/20 mt-16"></div>
 
                 <!-- Bottom -->
-                <div class=" text-center  py-8 text-sm text-gray-400">
-                    <p class="font-medium ">© 2026 CampusConnect. All rights reserved.</p>
-                    <p class="mt-2">
-                        Built with <span class="text-green-500">❤</span> to empower campus life
-                    </p>
+                <div class=" text-center items-center flex flex-col py-8 text-sm text-gray-400">
+                    <div>
+                        <p class="font-medium ">© 2026 CampusConnect. All rights reserved.</p>
+                    </div>
+                    <div class="mt-2 flex items-center space-between">
+                        <p>Built with <span class="text-green-500"> ❤ </span> to empower campus life | Designed by </p>
+                        <img class="h-14 " src="./assests/logo/Hrithik (3) (1).png" alt="">
+                    </div>
                 </div>
             </footer>
         </div>
     </div>
     <audio id="bgAudio" loop>
-        <source src="./freepik-virtual-sky.mp3" type="audio/mp3">
+        <source src="./assests/audio/freepik-virtual-sky.mp3" type="audio/mp3">
     </audio>
     <button id="audioBtn" class="fixed bottom-8 right-8 z-[100]
          px-6 py-1 rounded-full

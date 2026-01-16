@@ -4,7 +4,6 @@ const scroll = new LocomotiveScroll({
     lerp: 0.05
 });
 
-
 const audio = document.getElementById("bgAudio");
 const btn = document.getElementById("audioBtn");
 
