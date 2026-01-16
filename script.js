@@ -9,9 +9,9 @@ const btn = document.getElementById("audioBtn");
 btn.addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
-    btn.innerText = "🔇 Mute Music";
+    btn.innerText = "Play";
   } else {
     audio.pause();
-    btn.innerText = "🎵 Play Music";
+    btn.innerText = "Mute";
   }
 });

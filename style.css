@@ -30,7 +30,7 @@ body {
 #overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.85);
   z-index: 1;
 }
 
@@ -43,6 +43,7 @@ body {
 .nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 60px;
   padding: 0 30px;
@@ -51,7 +52,7 @@ body {
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
-  z-index: 999;
+  z-index: 200;
 }
 
 .tag {
@@ -75,7 +76,7 @@ body {
 }
 
 .tag a span {
-  color: rgb(0, 255, 26);
+  color: #00ff1a;
 }
 
 .nav-element {
@@ -106,14 +107,6 @@ body {
 }
 
 /* PAGE 2 */
-#page2 {
-  height: 100vh;
-  width: 100%;
-  background-color: #75029f;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
 
 #page2 img {
   height: 400px;
@@ -123,11 +116,11 @@ body {
 }
 
 /* PAGE 3 */
-#page3 {
+/* #page3 {
   height: 100vh;
   width: 100%;
   background-color: #211d71;
-}
+} */
 
 /* HERO SECTION */
 .hero {
@@ -226,4 +219,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* #page4 {
+  height: 60vh;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #02000b,
+    #10022f,
+    #21065b
+  );
+  display: flex;
+  align-items:center;
+  justify-content: space-evenly;
+  padding-top: 60px;
+} */
+
+.hero-tag {
+  color: #10a51f;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
