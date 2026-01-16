@@ -1,8 +1,10 @@
 const scroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
-    lerp: 0.08
+    lerp: 0.05
 });
+
+
 const audio = document.getElementById("bgAudio");
 const btn = document.getElementById("audioBtn");
 
