@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaigns | CampusConnect</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <link rel="icon" href="./assests/logo/cropped_circle_image (3).png">
+</head>
+
+<body class="bg-black text-white">
+
+    <div id="main" data-scroll-container>
+
+        <!-- NAVBAR (same as About) -->
+        <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="#main">
+            <div class="tag">
+                <img src="./assests/logo/fbadfb196068c417894dd4c5f9bfa7ba (2).png" alt="Campus Connect Logo" />
+                <a href="/">Campus<span>Connect</span></a>
+            </div>
+
+            <div class="nav-element">
+                <a href="./about.html">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Campaigns</a>
+                <a href="#">FAQ</a>
+                <a href="#">Community</a>
+                <!-- <a class="login-btn" href="#">Login / Sign Up</a> -->
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section data-scroll class="min-h-[60vh] pt-24 flex items-center justify-center text-center px-6
+            bg-[linear-gradient(120deg,#000000,#022d14,#000000)]">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-[#00ff1a] mb-6">
+                    Campus Campaigns
+                </h1>
+                <p class="text-gray-300 text-lg">
+                    Discover initiatives, explore ideas, and participate in meaningful
+                    campus-driven campaigns.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEARCH BAR -->
+        <section data-scroll class="py-10 px-6">
+            <div class="max-w-4xl mx-auto relative">
+                <i
+                    class="fa-solid fa-magnifying-glass fa-lg absolute left-4 top-1/2 z-[200] -translate-y-1/2 text-grey-400"></i>
+                <input id="searchInput" type="text" placeholder="Search campaigns..." class="w-full pl-12 pr-4 py-4 rounded-full bg-white/5 border border-white/10
+               focus:border-[#00ff1a] outline-none backdrop-blur-md" />
+            </div>
+        </section>
+
+        <!-- FILTERS -->
+        <section class="py-50 px-6">
+            <div class="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center">
+                <button class="px-6 py-2 rounded-full border border-[#00ff1a] text-[#00ff1a]">
+                    All
+                </button>
+                <button class="px-6 py-2 rounded-full border border-white/20 hover:border-[#00ff1a] transition">
+                    Coding
+                </button>
+                <button class="px-6 py-2 rounded-full border border-white/20 hover:border-[#00ff1a] transition">
+                    Social
+                </button>
+                <button class="px-6 py-2 rounded-full border border-white/20 hover:border-[#00ff1a] transition">
+                    Tech
+                </button>
+                <button class="px-6 py-2 rounded-full border border-white/20 hover:border-[#00ff1a] transition">
+                    Environment
+                </button>
+                <button class="px-6 py-2 rounded-full border border-white/20 hover:border-[#00ff1a] transition">
+                    Awareness
+                </button>
+            </div>
+        </section>
+
+        <!-- CAMPAIGNS GRID -->
+        <section data-scroll class="py-20 px-6">
+            <div id="campaignGrid" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+                <!-- CARD -->
+                <div class="campaign-card rounded-3xl bg-white/5 border border-white/10
+                  hover:border-[#00ff1a] transition overflow-hidden" data-title="Green Campus Drive">
+                    <div class="h-44 bg-[linear-gradient(135deg,#00ff1a20,#000000)]"></div>
+                    <div class="p-6">
+                        <span class="text-sm text-[#00ff1a] font-semibold">Environment</span>
+                        <div class="flex items-center justify-between">
+                            <h3 class="campaign-title text-xl font-bold mt-2 mb-3">
+                                Green Campus Drive
+                            </h3>
+                            <span
+                                class="text-sm py-1 px-2 rounded-full text-amber-200 border-2 border-amber-300">Eco-Club</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Promoting sustainability and eco-friendly practices across campus.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="flex-1 py-2 rounded-full border border-[#00ff1a]
+                           text-[#00ff1a] font-semibold 
+                           hover:scale-105 transition">
+                                Explore
+                            </button>
+                            <button class="flex-1 py-2 rounded-full bg-[#00ff1a] hover:scale-105
+                           text-black font-semibold">
+                                Join
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="campaign-card rounded-3xl bg-white/5 border border-white/10
+                  hover:border-[#00ff1a] transition overflow-hidden" data-title="Open Source Sprint">
+                    <div class="h-44 bg-[linear-gradient(135deg,#00ff1a20,#000000)]"></div>
+                    <div class="p-6">
+                        <span class="text-sm text-[#00ff1a] font-semibold">Tech</span>
+                        <div class="flex items-center justify-between">
+                            <h3 class="campaign-title text-xl font-bold mt-2 mb-3">
+                                OverClocked
+                            </h3>
+                            <span
+                                class="text-sm  px-2 py-1 rounded-full text-amber-200 border-2 border-amber-300">Dev-Soc</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Collaborate on real-world open-source projects with peers.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="flex-1 py-2 rounded-full border border-[#00ff1a]
+                           text-[#00ff1a] font-semibold hover:scale-105 transition">
+                                Explore
+                            </button>
+                            <button class="flex-1 py-2 rounded-full bg-[#00ff1a] hover:scale-105
+                           text-black font-semibold">
+                                Join
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="campaign-card rounded-3xl bg-white/5 border border-white/10
+                  hover:border-[#00ff1a] transition overflow-hidden" data-title="Mental Health Awareness">
+                    <div class="h-44 bg-[linear-gradient(135deg,#00ff1a20,#000000)]"></div>
+                    <div class="p-6">
+                        <span class="text-sm text-[#00ff1a] font-semibold">Awareness</span>
+                        <div class="flex items-center justify-between">
+                            <h3 class="campaign-title text-xl font-bold mt-2 mb-3">
+                                Code@Frost
+                            </h3>
+                            <span
+                                class="text-sm py-1 px-2 rounded-full text-amber-200 border-2 border-amber-300">Robotics-Club</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Encouraging open conversations and emotional well-being.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="flex-1 py-2 rounded-full border border-[#00ff1a]
+                           text-[#00ff1a] font-semibold hover:scale-105 transition">
+                                Explore
+                            </button>
+                            <button class="flex-1 py-2 rounded-full bg-[#00ff1a] hover:scale-105
+                           text-black font-semibold">
+                                Join
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FOOTER (same as About) -->
+        <footer data-scroll class="text-gray-300 pt-15">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 border-t border-white/20 md:grid-cols-3 pt-8 gap-16">
+
+                <!-- Brand -->
+                <div>
+                    <div class="tag mb-7">
+                        <img src="./assests/logo/fbadfb196068c417894dd4c5f9bfa7ba (2).png" alt="Campus Connect Logo" />
+                        <a href="/">Campus<span>Connect</span></a>
+                    </div>
+                    <p class="text-gray-400 max-w-sm leading-relaxed">
+                        Connecting students, faculty, and opportunities across the campus ecosystem.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Events</a></li>
+                        <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Feedback</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6">Connect With Us</h3>
+                    <div class="flex flex-col gap-5 text-2xl">
+                        <div class="flex gap-7">
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <div class="flex gap-7">
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-square-linkedin"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 mt-8"></div>
+
+            <!-- Bottom -->
+            <div class=" text-center items-center flex flex-col py-8 text-sm text-gray-400">
+                <div>
+                    <p class="font-medium ">© 2026 CampusConnect. All rights reserved.</p>
+                </div>
+                <div class="mt-2 flex items-center space-between">
+                    <p>Built with <span class="text-green-500"> ❤ </span> to empower campus life | Designed by </p>
+                    <img class="h-14 " src="./assests/logo/Hrithik (3) (1).png" alt="">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/eb3f9ce02e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
