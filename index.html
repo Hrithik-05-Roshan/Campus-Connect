@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Connect</title>
+    <title>CampusConnect</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Locomotive CSS -->
@@ -41,6 +41,8 @@
 
             <div id="content">
 
+
+
                 <!-- HERO SECTION -->
                 <div class="hero">
                     <p class="hero-tagline">Help & Grow,</p>
@@ -60,7 +62,7 @@
                         <a href="#" class="hero-secondary">Explore Campus</a>
                     </div>
 
-                    <div class="hero-scroll">
+                    <div class="hero-scroll mb-10">
                         <div>
                             <p class="hero-scroll-text">Scroll Down</p>
                         </div>
@@ -74,7 +76,6 @@
 
             </div>
         </section>
-
         <!-- PAGE 2 -->
         <div class="min-h-screen bg-gradient-to-b from-black via-emerald-950 to-black">
             <section id="page2" data-scroll class=" py-20">
@@ -124,7 +125,6 @@
 
             </section>
 
-            <!-- PAGE 3 -->
             <!-- PAGE 3 -->
             <section id="page3" data-scroll>
                 <section class=" text-white py-20">
@@ -187,20 +187,87 @@
                 </section>
 
             </section>
+            <!-- <section id="page4" data-scroll> -->
+            <footer class="text-gray-300 pt-15">
+                <div
+                    class="max-w-7xl mx-auto px-6 grid grid-cols-1 border-t border-white/20 md:grid-cols-3 pt-16 gap-16">
+
+                    <!-- Brand -->
+                    <div>
+                        <div class="tag mb-7">
+                            <img src="./fbadfb196068c417894dd4c5f9bfa7ba (1).png" alt="Campus Connect Logo" />
+                            <a href="/">Campus<span>Connect</span></a>
+                        </div>
+                        <p class="text-gray-400 max-w-sm leading-relaxed">
+                            Connecting students, faculty, and opportunities across the campus ecosystem.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                        <ul class="space-y-4">
+                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">About Us</a></li>
+                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Events</a></li>
+                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Careers</a></li>
+                            <li><a href="#" class="hover:text-[#00ff1a] hover:scale-[1.02] transition">Privacy
+                                    Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Social -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-6">Connect With Us</h3>
+                        <div class="flex gap-5 text-2xl">
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i
+                                    class="fa-brands fa-square-linkedin"></i></a>
+                            <a href="#" class="hover:text-[#00ff1a] transition"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-white/20 mt-16"></div>
+
+                <!-- Bottom -->
+                <div class=" text-center  py-8 text-sm text-gray-400">
+                    <p class="font-medium ">© 2026 CampusConnect. All rights reserved.</p>
+                    <p class="mt-2">
+                        Built with <span class="text-green-500">❤</span> to empower campus life
+                    </p>
+                </div>
+            </footer>
         </div>
+    </div>
+    <audio id="bgAudio" loop>
+        <source src="./freepik-virtual-sky.mp3" type="audio/mp3">
+    </audio>
+    <button id="audioBtn" class="fixed bottom-8 right-8 z-[100]
+         px-6 py-1 rounded-full
+         bg-black/60 text-white
+         border border-[#00ff1a]/40
+         backdrop-blur-xl
+         shadow-[0_0_20px_rgba(0,255,26,0.35)]
+         transition-all duration-300
+         hover:bg-green-100
+         hover:text-black
+         active:scale-95
+         flex items-center gap-2">
+        <span class="hidden sm:inline">Play</span>
+    </button>
 
 
 
-        <audio id="bgAudio" loop>
-            <source src="./freepik-virtual-sky.mp3" type="audio/mp3">
-        </audio>
-
-        <button id="audioBtn"
-            class="fixed bottom-8 right-8 z-[100] px-4 py-2 rounded-full bg-green-400 text-black backdrop-blur-md hover:bg-black hover:text-white transition cursor-pointer">
-            🎵 Play Music
-        </button>
-        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-        <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/eb3f9ce02e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
