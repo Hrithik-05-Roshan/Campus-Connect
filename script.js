@@ -230,3 +230,9 @@ if (document.body.dataset.page === "explore") {
 function openLoginSignup() {
   window.location.href = "./login-signup.html";
 }
+
+// dashboard open
+
+function openDashboard(){
+  window.location.href = "./dashboard.html";
+}
