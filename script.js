@@ -54,7 +54,6 @@ if (searchInput && cards.length) {
  * EXPLORE PAGE LOGIC (SCOPED & SAFE)
  **************************************************/
 if (document.body.dataset.page === "explore") {
-
   let issues = [];
   let activeChat = null;
 
@@ -210,7 +209,7 @@ if (document.body.dataset.page === "explore") {
           <div class="bg-white/10 px-4 py-2 rounded-lg">
             ${m}
           </div>
-        `
+        `,
       )
       .join("");
 
@@ -223,8 +222,6 @@ if (document.body.dataset.page === "explore") {
   renderLeaderboard();
 }
 
-
-
 // login-signup btn
 
 function openLoginSignup() {
@@ -233,6 +230,34 @@ function openLoginSignup() {
 
 // dashboard open
 
-function openDashboard(){
+function openDashboard() {
   window.location.href = "./dashboard.html";
 }
+
+// login-signup
+
+const loginTab = document.getElementById("loginTab");
+const signupTab = document.getElementById("signupTab");
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+loginTab.onclick = () => {
+  loginTab.className =
+    "flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black";
+  signupTab.className =
+    "flex-1 py-2 rounded-full font-semibold transition bg-transparent text-gray-300";
+
+  loginForm.classList.remove("hidden");
+  signupForm.classList.add("hidden");
+};
+
+signupTab.onclick = () => {
+  signupTab.className =
+    "flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black";
+  loginTab.className =
+    "flex-1 py-2 rounded-full font-semibold transition bg-transparent text-gray-300";
+
+  signupForm.classList.remove("hidden");
+  loginForm.classList.add("hidden");
+};
+
