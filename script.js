@@ -222,3 +222,11 @@ if (document.body.dataset.page === "explore") {
   renderIssues();
   renderLeaderboard();
 }
+
+
+
+// login-signup btn
+
+function openLoginSignup() {
+  window.location.href = "./login-signup.html";
+}
