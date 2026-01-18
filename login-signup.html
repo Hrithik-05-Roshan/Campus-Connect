@@ -6,6 +6,7 @@
   <title>Login | Signup – CampusConnect</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./assests/logo/cropped_circle_image (3).png">
 </head>
 
@@ -56,9 +57,9 @@
     </form>
 
     <!-- SIGNUP FORM (INNER SCROLL) -->
-    <form id="signupForm"
+    <form id="signupForm" 
       class="hidden px-6 pb-6 space-y-4 text-white
-             max-h-[420px] overflow-y-auto space-y-5 text-white">
+             max-h-[420px] overflow-y-auto space-y-5 text-white hide-scrollbar">
 
       <h2 class="text-2xl font-bold text-center">Create Account</h2>
 
@@ -131,41 +132,9 @@
   </div>
 
   <!-- SCRIPT -->
-  <script>
-    const loginTab = document.getElementById("loginTab");
-    const signupTab = document.getElementById("signupTab");
-    const loginForm = document.getElementById("loginForm");
-    const signupForm = document.getElementById("signupForm");
+  <script src="script.js"></script>
 
-    loginTab.onclick = () => {
-      loginTab.className =
-        "flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black";
-      signupTab.className =
-        "flex-1 py-2 rounded-full font-semibold transition bg-transparent text-gray-300";
 
-      loginForm.classList.remove("hidden");
-      signupForm.classList.add("hidden");
-    };
-
-    signupTab.onclick = () => {
-      signupTab.className =
-        "flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black";
-      loginTab.className =
-        "flex-1 py-2 rounded-full font-semibold transition bg-transparent text-gray-300";
-
-      signupForm.classList.remove("hidden");
-      loginForm.classList.add("hidden");
-    };
-  </script>
-
-  <!-- TAILWIND INPUT UTILITY -->
-  <style>
-    .auth-input {
-      @apply w-full px-4 py-3 rounded-xl bg-black/60
-             border border-white/20 text-white
-             focus:border-[#00ff1a] outline-none;
-    }
-  </style>
 
 </body>
 </html>
