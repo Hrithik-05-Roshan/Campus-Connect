@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
 
 const app = express();
 
@@ -35,14 +37,12 @@ app.get("/api/health", (req, res) => {
 ======================= */
 
 // Auth routes
-app.use("/api/auth", (req, res) => {
-  res.status(501).json({ message: "Auth routes not initialized yet" });
-});
+app.use("/api/auth", authRoutes);
+
 
 // User routes
-app.use("/api/user", (req, res) => {
-  res.status(501).json({ message: "User routes not initialized yet" });
-});
+app.use("/api/user", userRoutes);
+
 
 // Event routes
 app.use("/api/events", (req, res) => {
