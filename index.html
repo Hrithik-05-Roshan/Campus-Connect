@@ -30,8 +30,15 @@
                 <a href="./campaigns.html">Campaigns</a>
                 <a href="./faq.html">FAQ</a>
                 <a href="./community.html">Community</a>
-                <button id="btn-login" onclick="openLoginSignup()" class="inline-block bg-[#00ff1a] text-black font-medium text-sm
-                  px-3 py-1 rounded-lg hover:scale-105 transition">Login/Signup</button>
+                <button id="btn-login" onclick="openLoginSignup()"
+                    class="inline-block bg-[#00ff1a] text-black text-xs font-medium hover:scale-105 px-3 py-2 rounded-lg">
+                    Login / Signup
+                </button>
+
+                <button id="btn-dashboard" onclick="openDashboard()"
+                    class="hidden inline-block bg-[#00ff1a] text-black text-xs font-medium hover:scale-105 px-3 py-2 rounded-lg">
+                    My Dashboard
+                </button>
                 <!-- <a class="login-btn" href="#">Login / Sign Up</a> -->
             </div>
         </nav>
@@ -261,8 +268,10 @@
                         <p class="font-medium ">© 2026 CampusConnect. All rights reserved.</p>
                     </div>
                     <div class="mt-2 flex items-center space-between">
-                        <p>Built with a lot of <span class="text-green-500"> Coffee </span> to empower campus life &nbsp; <i class="fa-solid fa-bolt"></i> &nbsp;  Designed by</p>
-                        <a href="https://portfolio-hrithik-burnwal.vercel.app/" target="_blank"><img class="h-14 " src="./assests/logo/Hrithik (3) (1).png" alt=""></a>
+                        <p>Built with a lot of <span class="text-green-500"> Coffee </span> to empower campus life
+                            &nbsp; <i class="fa-solid fa-bolt"></i> &nbsp; Designed by</p>
+                        <a href="https://portfolio-hrithik-burnwal.vercel.app/" target="_blank"><img class="h-14 "
+                                src="./assests/logo/Hrithik (3) (1).png" alt=""></a>
                     </div>
                 </div>
             </footer>
@@ -287,6 +296,8 @@
     <script src="https://kit.fontawesome.com/eb3f9ce02e.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
+    <script src="auth-state.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import User from "../models/User.js";
 import generateToken from "../utils/generateToken.js";
+import cloudinary from "../config/cloudinary.js";
 
 /* =====================
    REGISTER USER
@@ -37,6 +38,31 @@ export const registerUser = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    /* =====================
+       PROFILE IMAGE UPLOAD
+    ===================== */
+    let profileImage = "";
+
+    if (req.file) {
+      const uploadToCloudinary = () => {
+        return new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream(
+            { folder: "campusconnect/profiles" },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          ).end(req.file.buffer);
+        });
+      };
+
+      const result = await uploadToCloudinary();
+      profileImage = result.secure_url;
+    }
+
+    /* =====================
+       CREATE USER
+    ===================== */
     const user = await User.create({
       fullName,
       email,
@@ -47,7 +73,8 @@ export const registerUser = async (req, res) => {
       course,
       branch,
       year,
-      semester
+      semester,
+      profileImage
     });
 
     generateToken(res, user._id);
@@ -58,9 +85,10 @@ export const registerUser = async (req, res) => {
     });
 
   } catch (error) {
+    console.error(error);
     res.status(500).json({
       success: false,
-      message: error.message
+      message: "Registration failed"
     });
   }
 };
@@ -89,6 +117,7 @@ export const loginUser = async (req, res) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
+
     if (!isMatch) {
       return res.status(401).json({
         success: false,
@@ -106,7 +135,7 @@ export const loginUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: error.message
+      message: "Login failed"
     });
   }
 };

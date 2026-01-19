@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,122 +20,99 @@
 
     <!-- TOGGLE -->
     <div class="flex bg-black/60 rounded-full p-1 m-6 mb-4">
-      <button id="loginTab"
-        class="flex-1 py-2 rounded-full font-semibold transition
-               bg-[#00ff1a] text-black">
+      <button id="loginTab" class="flex-1 py-2 rounded-full font-semibold transition bg-[#00ff1a] text-black">
         Login
       </button>
-      <button id="signupTab"
-        class="flex-1 py-2 rounded-full font-semibold transition
-               bg-transparent text-gray-300">
+      <button id="signupTab" class="flex-1 py-2 rounded-full font-semibold transition bg-transparent text-gray-300">
         Sign Up
       </button>
     </div>
+
+    <!-- ERROR MESSAGE -->
+    <p id="errorMsg" class="text-center text-red-400 text-sm hidden px-6"></p>
 
     <!-- LOGIN FORM -->
     <form id="loginForm" class="px-6 pb-6 space-y-5 text-white">
       <h2 class="text-2xl font-bold text-center">Welcome Back</h2>
 
-      <input type="email" placeholder="Email" required
-        class="w-full px-4 py-3 rounded-xl bg-black/60
-               border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" />
+      <input id="loginEmail" type="email" placeholder="Email" required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20 text-white focus:border-[#00ff1a] outline-none" />
 
-      <input type="password" placeholder="Password" required
-        class="w-full px-4 py-3 rounded-xl bg-black/60
-               border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" />
+      <input id="loginPassword" type="password" placeholder="Password" required
+        class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/20 text-white focus:border-[#00ff1a] outline-none" />
 
-      <button type="submit" id="btn-login"
-        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold
-               hover:scale-[1.03] transition">
+      <button type="submit"
+        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold hover:scale-[1.03] transition">
         Login
       </button>
-
-      <p class="text-center text-sm text-gray-400">
-        Forgot password? <span class="text-[#00ff1a]">Coming soon</span>
-      </p>
     </form>
 
-    <!-- SIGNUP FORM (INNER SCROLL) -->
-    <form id="signupForm" 
-      class="hidden px-6 pb-6 space-y-4 text-white
-             max-h-[420px] overflow-y-auto space-y-5 text-white hide-scrollbar">
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" class="hidden px-6 pb-6 space-y-4 text-white max-h-[420px] overflow-y-auto hide-scrollbar">
 
       <h2 class="text-2xl font-bold text-center">Create Account</h2>
-
-      <!-- PROFILE PICTURE -->
       <div class="flex flex-col items-center gap-2">
-        <label
-          class="w-24 h-24 rounded-full border-2 border-dashed border-[#00ff1a]
+        <label class="w-24 h-24 rounded-full border-2 border-dashed border-[#00ff1a]
                  flex items-center justify-center cursor-pointer
                  hover:bg-[#00ff1a]/10 transition">
           <span class="text-sm text-gray-400">Upload</span>
-          <input type="file" accept="image/*" class="hidden w-full px-4 py-3 rounded-xl bg-black/60
-               border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" />
+          <input type="file" id="profileImage" name="profileImage" accept="image/*" class="hidden w-full px-4 py-3 rounded-xl bg-black/60
+         border border-white/20 text-white
+         focus:border-[#00ff1a] outline-none" />
+
         </label>
         <p class="text-xs text-gray-400">Profile Picture</p>
       </div>
 
-      <!-- INPUTS -->
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Full Name" required />
+               focus:border-[#00ff1a] outline-none" id="fullName" placeholder="Full Name" required
+        class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Email" type="email" required />
+               focus:border-[#00ff1a] outline-none" id="email" type="email" placeholder="Email" required
+        class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Phone Number" required />
+               focus:border-[#00ff1a] outline-none" id="phone" placeholder="Phone Number" required
+        class="auth-input" />
+      <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
+               border border-white/20 text-white
+               focus:border-[#00ff1a] outline-none" id="password" type="password" placeholder="Password" required
+        class="auth-input" />
 
       <select class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none">
-        <option class="text-black">Student</option>
-        <option class="text-black">Teacher</option>
+               focus:border-[#00ff1a] outline-none" id="role" class="auth-input">
+        <option value="Student">Student</option>
+        <option value="Teacher">Teacher</option>
       </select>
 
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Institute Name" />
+               focus:border-[#00ff1a] outline-none" id="institute" placeholder="Institute Name" class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Course (B.Tech / B.Sc etc)" />
+               focus:border-[#00ff1a] outline-none" id="course" placeholder="Course" class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Branch" />
+               focus:border-[#00ff1a] outline-none" id="branch" placeholder="Branch" class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Year" />
+               focus:border-[#00ff1a] outline-none" id="year" placeholder="Year" class="auth-input" />
       <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
                border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" placeholder="Semester" />
+               focus:border-[#00ff1a] outline-none" id="semester" placeholder="Semester" class="auth-input" />
 
-      <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
-               border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" type="password" placeholder="Password" />
-      <input class="auth-input w-full px-4 py-3 rounded-xl bg-black/60
-               border border-white/20 text-white
-               focus:border-[#00ff1a] outline-none" type="password" placeholder="Confirm Password" />
-
-      <button id="btn-signup" type="submit"
-        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold
-               hover:scale-[1.03] transition">
+      <button type="submit"
+        class="w-full py-3 rounded-full bg-[#00ff1a] text-black font-bold hover:scale-[1.03] transition">
         Sign Up
       </button>
-
-      <p class="text-center text-xs text-gray-400 pb-2">
-        By signing up, you agree to our policies.
-      </p>
     </form>
 
   </div>
 
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
-
-
-
+  <script src="auth.js"></script>
 </body>
+
 </html>
