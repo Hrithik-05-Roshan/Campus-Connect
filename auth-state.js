@@ -1,30 +1,44 @@
-const API_URL = "http://localhost:5000/api";
+// Auth State Management for Navbar
+// NO UI CHANGES - Only toggles visibility of existing buttons
 
-/* =========================
-   NAVBAR AUTH STATE
-========================= */
-async function updateNavbarAuth() {
-  const loginBtn = document.getElementById("btn-login");
-  const dashboardBtn = document.getElementById("btn-dashboard");
+document.addEventListener('DOMContentLoaded', async () => {
+  const btnLogin = document.getElementById('btn-login');
+  const btnDashboard = document.getElementById('btn-dashboard');
 
-  if (!loginBtn) return;
+  // Only proceed if buttons exist (navbar is present)
+  if (!btnLogin || !btnDashboard) return;
 
   try {
-    const res = await fetch(`${API_URL}/user/me`, {
-      credentials: "include"
+    // Check if user is logged in
+    const response = await fetch(`${window.API_URL}/user/me`, {
+      credentials: 'include'
     });
 
-    if (!res.ok) throw new Error("Not logged in");
-
-    // Logged in
-    loginBtn.classList.add("hidden");
-    if (dashboardBtn) dashboardBtn.classList.remove("hidden");
-
-  } catch {
-    // Not logged in
-    loginBtn.classList.remove("hidden");
-    if (dashboardBtn) dashboardBtn.classList.add("hidden");
+    if (response.ok) {
+      // User is logged in
+      btnLogin.classList.add('hidden');
+      btnDashboard.classList.remove('hidden');
+    } else {
+      // User is not logged in
+      btnLogin.classList.remove('hidden');
+      btnDashboard.classList.add('hidden');
+    }
+  } catch (error) {
+    // On error, assume not logged in
+    btnLogin.classList.remove('hidden');
+    btnDashboard.classList.add('hidden');
   }
-}
+});
 
-updateNavbarAuth();
+// Logout function (can be called from console or attached to a button later)
+window.logout = async () => {
+  try {
+    await fetch(`${window.API_URL}/auth/logout`, {
+      method: 'GET',
+      credentials: 'include'
+    });
+    window.location.href = './index.html';
+  } catch (error) {
+    console.error('Logout failed', error);
+  }
+};

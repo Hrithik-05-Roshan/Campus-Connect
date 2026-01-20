@@ -12,7 +12,18 @@ const app = express();
 
 app.use(
   cors({
-    origin: true, // frontend origin will be auto-detected
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      // Allow localhost and 127.0.0.1 on any port
+      if (origin.match(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/)) {
+        return callback(null, true);
+      }
+
+      // Reject other origins
+      callback(new Error('Not allowed by CORS'));
+    },
     credentials: true
   })
 );

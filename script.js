@@ -118,20 +118,19 @@ if (document.body.dataset.page === "explore") {
           </p>
 
           <div class="mt-4">
-            ${
-              i.status === "Open"
-                ? `<button onclick="acceptIssue(${idx})"
+            ${i.status === "Open"
+          ? `<button onclick="acceptIssue(${idx})"
                     class="px-4 py-2 rounded-full border border-[#00ff1a]
                            text-[#00ff1a] hover:bg-[#00ff1a]
                            hover:text-black transition">
                     Accept
                    </button>`
-                : `<button onclick="openChat(${idx})"
+          : `<button onclick="openChat(${idx})"
                     class="px-4 py-2 rounded-full bg-[#00ff1a]
                            text-black hover:scale-105 transition">
                     Open Chat
                    </button>`
-            }
+        }
           </div>
         </div>
       `;
@@ -142,8 +141,17 @@ if (document.body.dataset.page === "explore") {
 
   /* ================= MODALS ================= */
 
-  window.openRaiseModal = () => {
-    document.getElementById("raiseModal")?.classList.remove("hidden");
+  window.openRaiseModal = async () => {
+    try {
+      const response = await fetch(`${window.API_URL}/user/me`, { credentials: 'include' });
+      if (response.ok) {
+        document.getElementById("raiseModal")?.classList.remove("hidden");
+      } else {
+        window.location.href = "./login-signup.html";
+      }
+    } catch (e) {
+      window.location.href = "./login-signup.html";
+    }
   };
 
   window.closeRaiseModal = () => {

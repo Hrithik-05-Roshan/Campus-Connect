@@ -44,20 +44,30 @@ export const registerUser = async (req, res) => {
     let profileImage = "";
 
     if (req.file) {
-      const uploadToCloudinary = () => {
-        return new Promise((resolve, reject) => {
-          cloudinary.uploader.upload_stream(
-            { folder: "campusconnect/profiles" },
-            (error, result) => {
-              if (error) reject(error);
-              else resolve(result);
-            }
-          ).end(req.file.buffer);
-        });
-      };
+      // Check if Cloudinary keys are present
+      if (process.env.CLOUDINARY_CLOUD_NAME && process.env.CLOUDINARY_API_KEY && process.env.CLOUDINARY_API_SECRET) {
+        try {
+          const uploadToCloudinary = () => {
+            return new Promise((resolve, reject) => {
+              cloudinary.uploader.upload_stream(
+                { folder: "campusconnect/profiles" },
+                (error, result) => {
+                  if (error) reject(error);
+                  else resolve(result);
+                }
+              ).end(req.file.buffer);
+            });
+          };
 
-      const result = await uploadToCloudinary();
-      profileImage = result.secure_url;
+          const result = await uploadToCloudinary();
+          profileImage = result.secure_url;
+        } catch (uploadError) {
+          console.error("Cloudinary upload failed:", uploadError);
+          // Continue without profile image
+        }
+      } else {
+        console.warn("Cloudinary keys missing. Skipping profile image upload.");
+      }
     }
 
     /* =====================
@@ -138,4 +148,22 @@ export const loginUser = async (req, res) => {
       message: "Login failed"
     });
   }
+};
+
+/* =====================
+   LOGOUT USER
+===================== */
+export const logoutUser = (req, res) => {
+  res.cookie("token", "", {
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax",
+    path: "/",
+    expires: new Date(0)
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged out successfully"
+  });
 };

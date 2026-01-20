@@ -1,34 +1,56 @@
-const API_URL = "http://localhost:5000/api";
+// Dashboard Data Loading
+// NO UI CHANGES - Only populates existing elements with data
 
-async function loadDashboard() {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Verify we are on the dashboard page
+  if (!document.querySelector('body[data-page="dashboard"]')) return;
+
   try {
-    const res = await fetch(`${API_URL}/user/me`, {
-      credentials: "include"
+    // Fetch user data
+    console.log('Fetching user data from:', `${window.API_URL}/user/me`);
+    const response = await fetch(`${window.API_URL}/user/me`, {
+      credentials: 'include'
     });
 
-    if (!res.ok) {
-      window.location.href = "login-signup.html";
+    console.log('Response status:', response.status);
+    console.log('Response ok:', response.ok);
+
+    if (!response.ok) {
+      // Not logged in, redirect to login
+      console.error('Not authenticated, redirecting to login');
+      window.location.href = './login-signup.html';
       return;
     }
 
-    const { user } = await res.json();
+    const data = await response.json();
+    const user = data.user;
 
-    document.getElementById("userName").textContent = user.fullName;
-    document.getElementById("userRole").textContent = user.role;
-    document.getElementById("userEmail").textContent = user.email;
-    document.getElementById("userPhone").textContent = user.phone;
-    document.getElementById("userInstitute").textContent = user.institute || "-";
-    document.getElementById("userCourse").textContent = user.course || "-";
-    document.getElementById("userBranch").textContent = user.branch || "-";
-    document.getElementById("userYear").textContent = user.year || "-";
-    document.getElementById("userSemester").textContent = user.semester || "-";
+    // Populate Dashboard Elements
+    const dashName = document.getElementById('dashName');
+    const dashCourse = document.getElementById('dashCourse');
+    const dashRank = document.getElementById('dashRank');
+    const issuesSolved = document.getElementById('issuesSolved');
+    const issuesRaised = document.getElementById('issuesRaised');
+    const totalPoints = document.getElementById('totalPoints');
+    const dashProfileImage = document.getElementById('dashProfileImage');
 
-    document.getElementById("profileImage").src =
-      user.profileImage || "https://via.placeholder.com/150";
+    if (dashName) dashName.textContent = user.fullName;
+    if (dashCourse) dashCourse.textContent = `${user.course} • ${user.branch}`;
+    if (dashRank) dashRank.textContent = `🏆 Rank ${user.rank || 'N/A'}`;
+    if (issuesSolved) issuesSolved.textContent = user.issuesSolved || 0;
+    if (issuesRaised) issuesRaised.textContent = user.issuesRaised || 0;
+    if (totalPoints) totalPoints.textContent = user.points || 0;
 
-  } catch {
-    window.location.href = "login-signup.html";
+    if (dashProfileImage && user.profileImage) {
+      dashProfileImage.src = user.profileImage;
+    } else if (dashProfileImage) {
+      // Fallback image or keep default
+      dashProfileImage.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+    }
+
+  } catch (error) {
+    console.error('Failed to load dashboard data', error);
+    // Optional: redirect to login on error
+    // window.location.href = './login-signup.html';
   }
-}
-
-loadDashboard();
+});
